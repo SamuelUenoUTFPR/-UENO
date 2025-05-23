@@ -1,0 +1,473 @@
+:root {
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --vermelho: #C91F37;
+    --bege: #F5F5DC;
+    --cinza: #E8E8E8;
+    --cinza-claro: #F5F5F5;
+    --cinza-medio: #CCCCCC;
+    --cinza-escuro: #333333;
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-kanji: 'Noto Sans JP', sans-serif;
+}
+
+* { 
+    margin: 0;
+    padding: 0; 
+}
+/* Estilos Gerais */
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--branco);
+    color: var(--preto);
+    margin: 0;
+    line-height: 1.6;
+}
+
+a{
+    text-decoration: none;
+    color: var(--branco);
+}
+.logo {
+    font-family: var(--fonte-kanji);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kanji {
+    font-weight: 700;
+}
+
+/* Header */
+.header {
+    padding: 1rem 5%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background: var(--preto);
+    color: var(--branco);
+}
+
+.nav {
+    justify-self: end;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--branco);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--vermelho);
+}
+
+/* Hero Section */
+.hero {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    color: var(--branco);
+}
+
+.hero-content h1 {
+    font-family: var(--fonte-kanji);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-carousel {
+    position: relative;
+    overflow: auto;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.carousel-prev { left: 2rem; }
+.carousel-next { right: 2rem; }
+
+.product-carousel {
+    position: relative;
+    overflow-x: auto;
+    padding: 3rem 5%;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+}
+
+
+/* Produtos */
+.destaques {
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.product-card {
+    background: var(--branco);
+    min-width: 250px;
+    max-width: 500px;
+    border: 1px solid var(--preto);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 0 var(--cinza-claro);
+}
+
+.product-section {
+    padding: 2rem;
+}
+
+.product-section h2 {
+    font-family: var(--fonte-kanji);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--preto);
+    color: var(--branco);
+    padding: 3rem 5%;
+    border-top: 2px solid var(--vermelho);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h5 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--vermelho);
+    padding-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section li {
+    margin: 0.5rem 0;
+}
+
+.footer-newsletter {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-newsletter {
+    background: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-links img {
+    width: 24px;
+    margin: 0 0.5rem;
+}
+
+.sustainability-stamp {
+    border: 2px solid var(--vermelho);
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Botões */
+.btn {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+/* Estilos do Login */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background: var(--branco);
+    padding: 2rem;
+    border: 2px solid var(--preto);
+    box-shadow: 8px 8px 0 var(--vermelho);
+    width: 90%;
+    max-width: 500px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.login-form input {
+    padding: 0.8rem;
+    border: 1px solid var(--preto);
+    font-family: var(--fonte-principal);
+}
+
+/* Estilo do Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--bege);
+    padding: 2rem;
+    border: 2px solid var(--preto);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--vermelho);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--vermelho);
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    border: 1px solid var(--preto);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Novos Estilos */
+
+.dark-bg {
+    background-color: var(--preto);
+    color: var(--preto);
+}
+.dark-bg h2{
+    color: var(--branco);
+}
+
+.sustainability-tabs {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.tab-btn {
+    background: none;
+    border: 1px solid var(--preto);
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.sustainability-badge {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilos Específicos para Login */
+.login-main {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-container {
+    background: var(--branco);
+    border: 2px solid var(--preto);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 6px 6px 0 var(--vermelho);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.auth-form input {
+    padding: 0.8rem;
+    border: 1px solid var(--preto);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--preto);
+    color: var(--preto);
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--preto);
+    color: var(--branco);
+}
+
+.auth-divider {
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.auth-divider span {
+    background: var(--branco);
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--preto);
+    z-index: 0;
+}
+
+.terms {
+    text-align: left;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Esconder scrollbar no Chrome */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
