@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UENO - Acesso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Cabeçalho Igual à Página Principal -->
+    <header class="header">
+        <div class="logo">
+            <span class="kanji">上野</span>
+            <span class="latin">UENO</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="#colecoes">Coleções</a>
+            <a href="index.html#sustentabilidade">Sustentabilidade</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Login -->
+    <main class="login-main">
+        <div class="auth-container">
+            <h2>Entrar na Comunidade UENO</h2>
+            <form id="loginForm" class="auth-form">
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            
+            <div class="auth-divider">
+                <span>ou</span>
+            </div>
+
+            <button class="btn-outline" id="openSignupModal">Criar Conta</button>
+        </div>
+    </main>
+
+    <!-- Rodapé Igual à Página Principal -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <!-- Seção Newsletter -->
+            <div class="footer-section">
+                <h5>Receba Nossas Atualizações</h5>
+                <form class="footer-newsletter">
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                </form>
+            </div>
+    
+            <!-- Categorias -->
+            <div class="footer-section">
+                <h5>Categorias</h5>
+                <ul>
+                    <li><a href="#masculino">Masculino</a></li>
+                    <li><a href="#feminino">Feminino</a></li>
+                    <li><a href="#kids">Infantil</a></li>
+                    <li><a href="#lifestyle">Estilo de Vida</a></li>
+                </ul>
+            </div>
+    
+            <!-- Atendimento -->
+            <div class="footer-section">
+                <h5>Atendimento</h5>
+                <ul>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#envios">Política de Envios</a></li>
+                    <li><a href="#trocas">Trocas & Devoluções</a></li>
+                    <li><a href="#privacidade">Privacidade</a></li>
+                </ul>
+            </div>
+    
+            <!-- Sustentabilidade -->
+            <div class="footer-section">
+                <h5>Sustentabilidade</h5>
+                <ul>
+                    <li><a href="#materiais">Materiais</a></li>
+                    <li><a href="#producao">Produção</a></li>
+                    <li><a href="#comunidade">Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+            </div>
+            <div class="legal-links">
+                <a href="#politica">Política de Privacidade</a> | 
+                <a href="#termos">Termos de Serviço</a>
+            </div>
+            <p class="copyright">© 2024 UENO · Moda Sustentável Oriental</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Cadastro -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>🎎 Junte-se à Revolução Sustentável</h3>
+            
+            <form id="signupForm" class="auth-form">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha (mín. 8 caracteres)" minlength="8" required>
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Aceito os <a href="#politica">Termos Sustentáveis</a></label>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+
+            <small>Ganhe 10% OFF na primeira compra! 🌱</small>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
