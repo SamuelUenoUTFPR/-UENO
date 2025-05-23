@@ -37,14 +37,11 @@ projeto-ueno/
 - └── seigaiha-pattern.png # Padrão de fundo
 
 📝 Critérios Atendidos
-Requisito	Local de Implementação
-Página de login/cadastro	login.html
-Formulário com 5 campos	Formulário de cadastro
-4+ imagens	Seção de produtos
-3+ cores	CSS variables (:root)
-2+ fontes	Google Fonts
-Validação W3C	Resultados HTML / CSS
-👥 Equipe
-Nome	Função	Currículo
-João Silva	Desenvolvedor Front-end	LinkedIn
-Maria Souza	Designer UI/UX	Portfólio
+- Requisito	Local de Implementação
+- Página de login/cadastro	login.html
+- Formulário com 5 campos	Formulário de cadastro
+- 4+ imagens	Seção de produtos
+- 3+ cores	CSS variables (:root)
+- 2+ fontes	Google Fonts
+- Validação W3C	Resultados HTML / CSS
+- Samuel Ueno Fernandes
