@@ -169,7 +169,7 @@ a{
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 4px 4px 0 var(--cinza-claro);
+    box-shadow: 4px 4px 0 var(--cinza-medio);
 }
 
 .product-section {
@@ -309,16 +309,17 @@ a{
 }
 
 .modal-content {
-    background-color: var(--bege);
-    padding: 2rem;
+    background-color: var(--cinza-claro);
     border: 2px solid var(--preto);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 3rem;
     width: 90%;
     max-width: 500px;
     text-align: center;
     position: relative;
-    box-shadow: 8px 8px 0 var(--vermelho);
 }
-
 .close-modal {
     position: absolute;
     top: 1rem;
@@ -392,7 +393,28 @@ a{
     height: auto;
 }
 
+.sustentabilidade, .termos {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    background: transparent;
+    color: #1a1a1a;
+}
+
+.sustentabilidade, .termos h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.sustentabilidade, .termos p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
 /* Estilos Específicos para Login */
+
 .login-main {
     min-height: 70vh;
     display: flex;
