@@ -1,7 +1,7 @@
 # 上野 (UENO) - Moda Sustentável Oriental  
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-green)](https://github.com/SamuelUenoUTFPR/UENO/blob/main/LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue)](https://samueluenoutfpr.github.io/UENO/)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue)](https://samueluenoutfpr.github.io/-UENO/)
 
 <img src="assets/logo.svg" alt="Logo UENO" width="200"/>
 
