@@ -3,8 +3,6 @@
 [![GitHub Pages](https://img.shields.io/badge/Deploy-Live%20Demo-blue)](https://samueluenoutfpr.github.io/-UENO/)
 [![W3C Validator](https://img.shields.io/badge/HTML5-Valid-brightgreen)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsamueluenoutfpr.github.io%2F-UENO%2F)
 
-![Hero Section](fall collection.jpg)
-
 ## 🌱 Visão do Projeto
 
 Um e-commerce de moda sustentável que funde o minimalismo japonês com práticas ecológicas inovadoras. Inspirado nos conceitos de *mottainai* (não desperdiçar) e *wabi-sabi* (beleza na imperfeição).
@@ -24,7 +22,6 @@ Um e-commerce de moda sustentável que funde o minimalismo japonês com prática
 | **Cores Primárias**    | `#000000`, `#FFFFFF`, `#C91F37`       |
 | **Fontes**             | Noto Sans JP (Kanji), Montserrat (Latim) |
 | **Ícones**             | Font Awesome + SVG customizados        |
-| **Padrões Visuais**    | Seigaiha, Shibori, Kintsugi digital   |
 
 ### 🛠 Stack Tecnológica
 <p align="left">
