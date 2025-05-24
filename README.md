@@ -1,10 +1,9 @@
-# <img src="assets/logo.svg" alt="UENO Logo" width="40"> 上野 UENO - Moda Sustentável Oriental
+# 上野 UENO - Moda Sustentável Oriental
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/Deploy-Live%20Demo-blue)](https://samueluenoutfpr.github.io/-UENO/)
 [![W3C Validator](https://img.shields.io/badge/HTML5-Valid-brightgreen)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsamueluenoutfpr.github.io%2F-UENO%2F)
 
-![Hero Section](assets/hero-preview.jpg)
+![Hero Section](fall collection.jpg)
 
 ## 🌱 Visão do Projeto
 
