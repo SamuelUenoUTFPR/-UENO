@@ -1,44 +1,52 @@
-# 上野 (UENO) - Moda Sustentável Oriental  
+# <img src="assets/logo.svg" alt="UENO Logo" width="40"> 上野 UENO - Moda Sustentável Oriental
 
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue)](https://samueluenoutfpr.github.io/-UENO/)
+[![GitHub License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-Live%20Demo-blue)](https://samueluenoutfpr.github.io/-UENO/)
+[![W3C Validator](https://img.shields.io/badge/HTML5-Valid-brightgreen)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsamueluenoutfpr.github.io%2F-UENO%2F)
 
-## 🌱 Sobre o Projeto  
-O **UENO** é um e-commerce de moda sustentável que combina design minimalista japonês com práticas eco-conscious. Nosso objetivo é oferecer peças atemporais produzidas através de:  
+![Hero Section](assets/hero-preview.jpg)
 
-✅ **Materiais reciclados** (algodão orgânico, poliéster de garrafas PET)  
-✅ **Técnicas de tingimento natural** (inspiradas no *shibori* tradicional)  
-✅ **Parcerias com artesãos locais** do Japão e Brasil  
+## 🌱 Visão do Projeto
 
-**ODS Atendido:** [ODS 12 - Consumo e Produção Responsáveis](https://brasil.un.org/pt-br/sdgs/12)  
+Um e-commerce de moda sustentável que funde o minimalismo japonês com práticas ecológicas inovadoras. Inspirado nos conceitos de *mottainai* (não desperdiçar) e *wabi-sabi* (beleza na imperfeição).
 
-## 🎌 Visual Moderno + Oriental  
-- **Cores:** Paleta minimalista com preto, branco e vermelho lacrado  
-- **Tipografia:** Combinação de fontes japonesas (`Noto Sans JP`) e modernas (`Montserrat`)  
-- **Elementos Visuais:**  
-  - Padrões *seigaiha* (ondas) como texturas  
-  - Fotografias urbanas de Tóquio  
-  - Ícones inspirados em *ukiyo-e*  
+### 🎯 Objetivos
+- ✔️ Reduzir em 40% o desperdício têxtil até 2025
+- ✔️ Utilizar 100% materiais reciclados/orgânicos
+- ✔️ Apoiar 50 artesãos locais no Brasil e Japão
 
-## 🛠️ Tecnologias  
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+**ODS Atendido:** [ODS 12 - Consumo e Produção Responsáveis](https://brasil.un.org/pt-br/sdgs/12)
 
-## 📂 Estrutura do Projeto  
-projeto-ueno/
-- ├── index.html # Página principal
-- ├── login.html # Página de login/cadastro
-- ├── css/
-- │ └── style.css # Estilos globais
-- - └── assets/ # Pasta de mídias
-- ├── logo.svg # Logo da marca
-- ├── tokyo-night.jpg # Imagem hero
-- └── seigaiha-pattern.png # Padrão de fundo
+## ✨ Destaques Técnicos
 
-📝 Critérios Atendidos
-- Requisito	Local de Implementação
-- Página de login/cadastro	login.html
-- Formulário com 5 campos	Formulário de cadastro
-- 4+ imagens	Seção de produtos
-- 3+ cores	CSS variables (:root)
-- 2+ fontes	Google Fonts
-- Validação W3C	Resultados HTML / CSS
-- Samuel Ueno Fernandes
+### 🎨 Design System
+| Elemento               | Especificação                          |
+|------------------------|----------------------------------------|
+| **Cores Primárias**    | `#000000`, `#FFFFFF`, `#C91F37`       |
+| **Fontes**             | Noto Sans JP (Kanji), Montserrat (Latim) |
+| **Ícones**             | Font Awesome + SVG customizados        |
+| **Padrões Visuais**    | Seigaiha, Shibori, Kintsugi digital   |
+
+### 🛠 Stack Tecnológica
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
+
+## 🏗 Estrutura do Projeto
+
+```bash
+├── index.html                # Página principal
+├── login.html                # Sistema de autenticação
+├── sustentabilidade.html     # Detalhes eco-friendly
+├── css/
+│   ├── style.css             # Estilos globais
+│   └── components/           # Botões, cards, modais
+├── assets/
+│   ├── images/               # Imagens otimizadas (WebP)
+│   ├── patterns/             # Texturas orientais
+│   └── icons/                # SVG customizados
+└── js/
+    ├── main.js               # Lógica principal
+    └── carousel.js           # Controle de sliders
