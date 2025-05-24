@@ -124,7 +124,7 @@ a{
 }
 
 .carousel-prev { left: 2rem; }
-.carousel-next { right: 2rem; }
+.carousel-next { right: 2rem; } 
 
 .product-carousel {
     position: relative;
@@ -164,12 +164,13 @@ a{
     border: 1px solid var(--preto);
     padding: 2.5rem;
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 4px 4px 0 var(--cinza-medio);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .product-section {
@@ -262,6 +263,11 @@ a{
 
 .btn:hover {
     opacity: 0.7;
+}
+
+input:focus {
+    outline: 2px solid var(--vermelho);
+    border-color: transparent;
 }
 
 /* Estilos do Login */
@@ -411,6 +417,15 @@ a{
     margin-bottom: 1.2rem;
     text-align: justify;
     font-size: 1.05rem;
+}
+
+.nav i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.btn-login i {
+    margin-right: 6px;
 }
 
 /* Estilos Específicos para Login */
