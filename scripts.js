@@ -87,3 +87,33 @@ document.querySelector('.carousel-next').addEventListener('click', () => {
 
 // Auto-advance every 5 seconds
 setInterval(() => showSlide(currentSlide + 1), 5000);
+
+// Redirecionamento após login/cadastro
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "index.html"; // Redireciona para a página principal
+});
+
+document.getElementById("signupForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Cadastro realizado com sucesso! Faça login para continuar.");
+    document.getElementById("signupModal").style.display = "none"; // Fecha o modal
+});
+
+// Valida se as senhas coincidem
+document.getElementById("signupForm")?.addEventListener("submit", function(e) {
+    const senha = document.querySelector("#signupForm input[type='password']");
+    const confirmarSenha = document.querySelector("#signupForm input[type='password']:last-of-type");
+    
+    if(senha.value !== confirmarSenha.value) {
+        e.preventDefault();
+        alert("As senhas não coincidem!");
+        confirmarSenha.focus();
+    }
+});
+
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    this.querySelector("button").innerHTML = '<i class="fas fa-spinner fa-spin"></i> Entrando...';
+    setTimeout(() => window.location.href = "index.html", 1500);
+});
