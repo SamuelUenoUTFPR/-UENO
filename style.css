@@ -1,6 +1,3 @@
-
-
-
 :root {
     --preto: #000000;
     --branco: #FFFFFF;
@@ -135,13 +132,11 @@ ul {
     margin-right: 8px;
 }
 
-
-
 /* Hero Carousel */
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: 600px; /* Altura padrão para desktop */
+    height: 600px;
     overflow: hidden;
 }
 
@@ -207,8 +202,6 @@ ul {
 .carousel-control.next {
     right: 20px;
 }
-
-
 
 /* Grid de Produtos */
 .grid-3-col {
@@ -362,8 +355,6 @@ ul {
     padding-top: 20px;
     border-top: 1px solid var(--cinza-medio);
 }
-
-
 
 /* Login Page Specific Styles */
 .login-main {
@@ -531,8 +522,6 @@ ul {
     color: var(--cinza-escuro);
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 1024px) {
     .header .nav a {
@@ -567,7 +556,7 @@ ul {
     }
 
     .hero-carousel {
-        height: 400px; /* Ajustado para mobile */
+        height: 500px;
     }
 
     .carousel-caption {
@@ -630,7 +619,7 @@ ul {
     }
 
     .hero-carousel {
-        height: 300px; /* Ainda menor para telas muito pequenas */
+        height: 400px;
     }
 
     .carousel-caption h1 {
@@ -670,25 +659,6 @@ ul {
     .sustainability-content h2,
     .terms-content h2 {
         font-size: 1.5rem;
-    }
-}
-
-/* Adições para desktop (maior que 768px) */
-@media (min-width: 769px) {
-    .grid-3-col {
-        grid-template-columns: repeat(3, 1fr); /* Garante 3 colunas em desktop */
-    }
-
-    .hero-carousel {
-        height: 600px; /* Restaura a altura original para desktop */
-    }
-
-    .carousel-inner {
-        width: 100%; /* Ajusta para que o carrossel mostre 1 item por vez em desktop */
-    }
-
-    .carousel-item {
-        width: 100%; /* Cada item ocupa 100% da largura do carrossel */
     }
 }
 
