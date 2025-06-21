@@ -49,20 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     function updateCarousel() {
-        let itemsPerView = 1; // Padrão para mobile
-        if (window.innerWidth > 768) { // Para desktop
-            itemsPerView = 1; // Mantém 1 item por vez, mas o CSS já garante 3 visíveis
-        }
-
-        const itemWidth = carouselItems[0].clientWidth; // Largura de um item
-        const totalItems = carouselItems.length;
-        const maxIndex = totalItems - itemsPerView;
-
-        // Ajusta o currentIndex para não ultrapassar o limite de slides visíveis
-        if (currentIndex > maxIndex) {
-            currentIndex = maxIndex;
-        }
-
+        const itemWidth = carouselItems[0].clientWidth;
         carouselInner.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
     }
 
