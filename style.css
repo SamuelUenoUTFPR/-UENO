@@ -523,21 +523,6 @@ ul {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .header .nav a {
-        margin-left: 20px;
-        font-size: 1rem;
-    }
-
-    .carousel-caption h1 {
-        font-size: 3rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1.3rem;
-    }
-}
-
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -553,14 +538,6 @@ ul {
 
     .header .nav a {
         margin: 5px 10px;
-    }
-
-    .hero-carousel {
-        height: 500px;
-    }
-
-    .carousel-caption {
-        padding: 20px;
     }
 
     .carousel-caption h1 {
@@ -596,69 +573,6 @@ ul {
 
     .footer-col .social-icons {
         margin-top: 15px;
-    }
-
-    .sustainability-content h1,
-    .terms-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .sustainability-content h2,
-    .terms-content h2 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header .logo {
-        font-size: 1.5rem;
-    }
-
-    .header .nav a {
-        font-size: 0.9rem;
-    }
-
-    .hero-carousel {
-        height: 400px;
-    }
-
-    .carousel-caption h1 {
-        font-size: 2rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem;
-    }
-
-    .section-padding {
-        padding: 60px 0;
-    }
-
-    .product-card,
-    .testimonial-card {
-        padding: 15px;
-    }
-
-    .newsletter h2 {
-        font-size: 2rem;
-    }
-
-    .newsletter-form input[type="email"] {
-        width: 100%;
-    }
-
-    .auth-container {
-        padding: 20px;
-    }
-
-    .sustainability-content h1,
-    .terms-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .sustainability-content h2,
-    .terms-content h2 {
-        font-size: 1.5rem;
     }
 }
 
