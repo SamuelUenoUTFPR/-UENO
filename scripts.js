@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Abrir Modal de Sustentabilidade
     modals.sustainability.open.addEventListener("click", () => {
         modals.sustainability.modal.style.display = "flex";
-        document.querySelector(".tab-content.active").classList.remove("active");
-        document.getElementById("sustainability-info").classList.add("active");
+        document.querySelector(".tab-content").classList.add("active");
     });
 
     // Controle de Abas
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener("click", () => {
             document.querySelector(".tab-btn.active").classList.remove("active");
             btn.classList.add("active");
-
+            
             const tabId = btn.dataset.tab;
             document.querySelector(".tab-content.active").classList.remove("active");
             document.getElementById(tabId).classList.add("active");
@@ -29,90 +28,92 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fechar Modais
     Object.values(modals).forEach(m => {
-        if (m.close) {
-            m.close.addEventListener("click", () => {
-                m.modal.style.display = "none";
-            });
-        }
-        window.addEventListener("click", (event) => {
-            if (event.target == m.modal) {
-                m.modal.style.display = "none";
-            }
+        m.close.addEventListener("click", () => m.modal.style.display = "none");
+        window.addEventListener("click", (e) => {
+            if (e.target === m.modal) m.modal.style.display = "none";
         });
     });
+});
 
-    // Carrossel
-    const carouselInner = document.querySelector(".carousel-inner");
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const prevBtn = document.querySelector(".carousel-control.prev");
-    const nextBtn = document.querySelector(".carousel-control.next");
-    let currentIndex = 0;
+// Controle de Redirecionamento
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    // Validação Simulada
+    window.location.href = "index.html";
+});
 
-    function updateCarousel() {
-        const itemWidth = carouselItems[0].clientWidth;
-        carouselInner.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
-    }
+document.getElementById("signupForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    // Validação Simulada
+    alert("Cadastro realizado! Redirecionando...");
+    window.location.href = "index.html";
+});
 
-    prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
-        updateCarousel();
+// Controle do Modal de Cadastro
+const signupModal = document.getElementById("signupModal");
+document.getElementById("openSignupModal")?.addEventListener("click", () => {
+    signupModal.style.display = "flex";
+});
+
+document.querySelectorAll(".close-modal").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.closest(".modal-overlay").style.display = "none";
     });
+});
 
-    nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    });
-
-    window.addEventListener("resize", updateCarousel);
-    updateCarousel(); // Initial load
-
-    // Login/Registro
-    const loginForm = document.getElementById("loginForm");
-    const registerForm = document.getElementById("registerForm");
-    const showRegisterLink = document.getElementById("showRegister");
-    const showLoginLink = document.getElementById("showLogin");
-    const loginTitle = document.querySelector(".login-main h2:nth-of-type(1)");
-    const registerTitle = document.querySelector(".login-main h2:nth-of-type(2)");
-    const loginParagraph = document.querySelector(".login-main p:nth-of-type(1)");
-    const registerParagraph = document.querySelector(".login-main p:nth-of-type(2)");
-
-    if (showRegisterLink) {
-        showRegisterLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            loginForm.style.display = "none";
-            loginTitle.style.display = "none";
-            loginParagraph.style.display = "none";
-            registerForm.style.display = "block";
-            registerTitle.style.display = "block";
-            registerParagraph.style.display = "block";
-        });
+// Fechar Modal ao Clicar Fora
+window.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-overlay")) {
+        e.target.style.display = "none";
     }
+});
 
-    if (showLoginLink) {
-        showLoginLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            registerForm.style.display = "none";
-            registerTitle.style.display = "none";
-            registerParagraph.style.display = "none";
-            loginForm.style.display = "block";
-            loginTitle.style.display = "block";
-            loginParagraph.style.display = "block";
-        });
-    }
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
 
-    if (loginForm) {
-        loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Login em desenvolvimento!");
-            // Lógica de login aqui
-        });
-    }
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
 
-    if (registerForm) {
-        registerForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Registro em desenvolvimento!");
-            // Lógica de registro aqui
-        });
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+});
+
+document.querySelector('.carousel-next').addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+});
+
+// Auto-advance every 5 seconds
+setInterval(() => showSlide(currentSlide + 1), 5000);
+
+// Redirecionamento após login/cadastro
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "index.html"; // Redireciona para a página principal
+});
+
+document.getElementById("signupForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Cadastro realizado com sucesso! Faça login para continuar.");
+    document.getElementById("signupModal").style.display = "none"; // Fecha o modal
+});
+
+// Valida se as senhas coincidem
+document.getElementById("signupForm")?.addEventListener("submit", function(e) {
+    const senha = document.querySelector("#signupForm input[type='password']");
+    const confirmarSenha = document.querySelector("#signupForm input[type='password']:last-of-type");
+    
+    if(senha.value !== confirmarSenha.value) {
+        e.preventDefault();
+        alert("As senhas não coincidem!");
+        confirmarSenha.focus();
     }
+});
+
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    this.querySelector("button").innerHTML = '<i class="fas fa-spinner fa-spin"></i> Entrando...';
+    setTimeout(() => window.location.href = "index.html", 1500);
 });
