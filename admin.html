@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者 Admin - 上野 UENO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para a página Admin */
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+            min-height: 80vh;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--cinza-medio);
+        }
+
+        .admin-header h1 {
+            font-family: var(--fonte-kanji);
+            font-size: 2.5rem;
+            color: var(--preto);
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-header p {
+            color: var(--cinza-escuro);
+            font-size: 1.1rem;
+        }
+
+        .admin-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .form-section {
+            background: var(--cinza-claro);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-section h2 {
+            font-family: var(--fonte-kanji);
+            color: var(--preto);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--cinza-escuro);
+        }
+
+        .form-group input {
+            width: 95%;
+            padding: 0.8rem;
+            border: 2px solid var(--cinza-medio);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--vermelho);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-admin {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--vermelho);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background: #a91829;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--cinza-medio);
+            color: var(--cinza-escuro);
+        }
+
+        .btn-secondary:hover {
+            background: #b8b8b8;
+        }
+
+        .users-section {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .users-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .users-header h2 {
+            font-family: var(--fonte-kanji);
+            color: var(--preto);
+            font-size: 1.5rem;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 88%;
+            padding: 0.8rem 2.5rem 0.8rem 1rem;
+            border: 2px solid var(--cinza-medio);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--cinza-escuro);
+        }
+
+        .users-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .user-card {
+            background: var(--cinza-claro);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border-left: 4px solid var(--vermelho);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .user-card:hover {
+            transform: translateX(5px);
+        }
+
+        .user-info h4 {
+            margin: 0 0 0.25rem 0;
+            color: var(--preto);
+        }
+
+        .user-info p {
+            margin: 0;
+            color: var(--cinza-escuro);
+            font-size: 0.9rem;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-delete {
+            background: var(--vermelho);
+            color: var(--branco);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background: #a91829;
+        }
+
+        .btn-clear-all {
+            background: var(--cinza-escuro);
+            color: var(--branco);
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-clear-all:hover {
+            background: #222;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--cinza-escuro);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cinza-medio);
+        }
+
+        @media (max-width: 768px) {
+            .admin-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .users-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+                <span class="kanji">上野</span>
+                <span class="latin">UENO</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html"> 上野 Fall Collection 25</a>
+            <a href="index.html#masculino">Masculino</a>
+            <a href="index.html#feminino">Feminino</a>
+            <a href="sustentabilidade.html"><i class="fas fa-recycle"></i> Sustentabilidade</a>
+            <a href="admin.html" class="active"><i class="fas fa-user-shield"></i> Admin</a>
+            <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Login</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1>管理者 Admin</h1>
+            <p>Sistema de Gerenciamento de Usuários UENO</p>
+        </div>
+
+        <div class="admin-content">
+            <!-- Seção do Formulário -->
+            <div class="form-section">
+                <h2>新規ユーザー Novo Usuário</h2>
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="userName">Nome do Usuário:</label>
+                        <input type="text" id="userName" name="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">E-mail:</label>
+                        <input type="email" id="userEmail" name="userEmail" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-admin btn-primary">
+                            <i class="fas fa-plus"></i> Cadastrar
+                        </button>
+                        <button type="button" id="clearForm" class="btn-admin btn-secondary">
+                            <i class="fas fa-eraser"></i> Limpar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Seção da Lista de Usuários -->
+            <div class="users-section">
+                <div class="users-header">
+                    <h2>ユーザー一覧 Lista de Usuários</h2>
+                    <button id="clearAll" class="btn-clear-all">
+                        <i class="fas fa-trash-alt"></i> Limpar Todos
+                    </button>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar usuários...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+
+                <div class="users-list" id="usersList">
+                    <div class="empty-state">
+                        <i class="fas fa-users"></i>
+                        <p>Nenhum usuário cadastrado ainda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+    <div class="footer-grid">
+        <!-- Seção Newsletter -->
+        <div class="footer-section">
+            <h5>Receba Nossas Atualizações</h5>
+            <form class="footer-newsletter">
+                <input type="email" placeholder="Seu e-mail" required>
+                <button type="submit" class="btn-newsletter">Inscrever-se</button>
+            </form>
+        </div>
+
+        <!-- Categorias -->
+        <div class="footer-section">
+            <h5>Categorias</h5>
+            <ul>
+                <li><a href="index.html#masculino">Masculino</a></li>
+                <li><a href="index.html#feminino">Feminino</a></li>
+                <li><a href="index.html#novidades">上野 Fall Collection 25</a></li>
+            </ul>
+        </div>
+
+        <!-- Atendimento -->
+        <div class="footer-section">
+            <h5>Atendimento</h5>
+            <ul>
+                <li>Contato - (43) 99922-4083</li>
+                <li><a href="termos.html">Política de Envios</a></li>
+                <li><a href="termos.html#devolucao">Trocas & Devoluções</a></li>
+                <li><a href="termos.html#privacidade">Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Sustentabilidade -->
+        <div class="footer-section">
+            <h5>Sustentabilidade</h5>
+            <ul>
+                <li><a href="sustentabilidade.html">Termos de Sustentabilidade</a></li>
+                <li><a href="sustentabilidade.html#ODS12">ODS12</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="legal-links">
+            <a href="termos.html">Política de Privacidade</a> | 
+            <a href="termos.html">Termos de Serviço</a>
+        </div>
+        <p class="copyright">© 2025 UENO · Moda Sustentável Oriental</p>
+        <a href="https://samueluenoutfpr.github.io/">Curriculum Vitae</a>
+    </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="admin.js"></script>
+</body>
+</html>
+
