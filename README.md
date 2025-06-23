@@ -36,13 +36,15 @@ Um e-commerce de moda sustentável que funde o minimalismo japonês com prática
 ├── index.html                # Página principal
 ├── login.html                # Sistema de autenticação
 ├── sustentabilidade.html     # Detalhes eco-friendly
+├── termos.html               # Detalhes sobre os Termos
+├── admin.html                # Página de Administrador
 ├── css/
 │   ├── style.css             # Estilos globais
-│   └── components/           # Botões, cards, modais
+│   └── admin style           # Estilos de Admin
 ├── assets/
 │   ├── images/               # Imagens otimizadas (WebP)
 │   ├── patterns/             # Texturas orientais
 │   └── icons/                # SVG customizados
 └── js/
-    ├── main.js               # Lógica principal
-    └── carousel.js           # Controle de sliders
+    ├── scripts.js               # Lógica principal
+    └── admin.js           # Controle de sliders
