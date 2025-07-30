@@ -44,30 +44,46 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // --- CONTROLE DE CARROSSEL (INCONSISTENTE, MANTIDO POR ENQUANTO) ---
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
+    // --- CONTROLE DOS CARROSSÉIS DE PRODUTOS ---
 
-    if (slides.length > 0) { // Só executa se houver um carrossel deste tipo na página
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os carrosséis de produtos da página
+    const productCarousels = document.querySelectorAll('.product-carousel');
 
-        prevButton?.addEventListener('click', () => {
-            showSlide(currentSlide - 1);
+    productCarousels.forEach(carousel => {
+        const container = carousel.querySelector('.carousel-container');
+        if (!container) return; // Pula se o carrossel não tiver um container
+
+        // 1. Criar os botões de controle
+        const prevButton = document.createElement('button');
+        prevButton.className = 'carousel-btn prev';
+        prevButton.innerHTML = '&#10094;'; // Seta para a esquerda
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'carousel-btn next';
+        nextButton.innerHTML = '&#10095;'; // Seta para a direita
+
+        // 2. Adicionar os botões ao carrossel
+        carousel.appendChild(prevButton);
+        carousel.appendChild(nextButton);
+
+        // 3. Adicionar a funcionalidade de clique
+        nextButton.addEventListener('click', () => {
+            // Rola o carrossel para a direita pelo tamanho da sua largura visível
+            container.scrollBy({
+                left: container.clientWidth,
+                behavior: 'smooth'
+            });
         });
 
-        nextButton?.addEventListener('click', () => {
-            showSlide(currentSlide + 1);
+        prevButton.addEventListener('click', () => {
+            // Rola o carrossel para a esquerda
+            container.scrollBy({
+                left: -container.clientWidth,
+                behavior: 'smooth'
+            });
         });
-
-        setInterval(() => showSlide(currentSlide + 1), 5000);
-        showSlide(0); // Garante que o primeiro slide apareça
-    }
+    });
 });
 
 // --- LÓGICA DOS FORMULÁRIOS (CORRIGIDA E UNIFICADA) ---
