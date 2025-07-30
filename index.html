@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Meta tags e links de fontes anteriores -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>上野 UENO</title>
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header class="header">
         <div class="logo">
                 <span class="kanji">上野</span>
@@ -26,7 +24,6 @@
         </nav>
     </header>
 
-    <!-- Hero Carousel -->
     <section class="hero-carousel">
         <img src="imagens/fall collection.jpg" loading="lazy" alt="Coleção Outono UENO" width="1905" height="915"/>
         <div class="carousel-text">
@@ -35,21 +32,19 @@
         </div>
     </section>
 
-    <section class="product-carousel">
-        <div class="carousel-container">
-            <div class="carousel-track">
-                <div class="product-card">
-                    <a href="#masculino"><img src="imagens/males collection.webp" alt="Coleção masculina"></a>
-                    <h4>Male's Collection 25</h4>
-                </div>
-                <div class="product-card">
-                    <a href="#feminino"><img src="imagens/females collection.webp" alt="Coleção feminina"></a>
-                    <h4>Female's Collection 25</h4>
-                </div>
-                <div class="product-card">
-                    <a href="#novidades"><img src="imagens/outono.webp" alt="Coleção Outono"></a>
-                    <h4>上野 Fall Collection 25</h4>
-                </div>
+    <section class="product-section">
+        <div class="product-grid">
+            <div class="product-card">
+                <a href="#masculino"><img src="imagens/males collection.webp" alt="Coleção masculina"></a>
+                <h4>Male's Collection 25</h4>
+            </div>
+            <div class="product-card">
+                <a href="#feminino"><img src="imagens/females collection.webp" alt="Coleção feminina"></a>
+                <h4>Female's Collection 25</h4>
+            </div>
+            <div class="product-card">
+                <a href="#novidades"><img src="imagens/outono.webp" alt="Coleção Outono"></a>
+                <h4>上野 Fall Collection 25</h4>
             </div>
         </div>
     </section>
@@ -58,178 +53,198 @@
     <h2 class="destaques">Best Sellers</h2>
         <div class="carousel-container">
             <div class="carousel-track">
+                <a href="produto.html?id=jaqueta-duality" class="product-link">
                     <div class="product-card">
                         <img src="imagens/jaqueta.webp" alt="Jaqueta Duality" width="460" height="620">
                         <h4>Jaqueta "Duality"</h4>
                         <p>R$ 680</p>
                     </div>
+                </a>
+                <a href="produto.html?id=kimono-duality" class="product-link">
                     <div class="product-card">
                         <img src="imagens/kimono.webp" alt="Black Kimono Duality" width="460" height="620"> 
                         <h4>Kimono "Duality" Preto</h4>
                         <p>R$ 930</p>
                     </div>
+                </a>
+                <a href="produto.html?id=parka-future" class="product-link">
                     <div class="product-card">
                         <img src="imagens/parka.webp" alt="Black Future Parka" width="460" height="620">
                         <h4>Parka "Future" Preta</h4>
                         <p>R$ 1.120</p>
                     </div>
+                </a>
+                <a href="produto.html?id=camisa-horizon" class="product-link">
                     <div class="product-card">
                         <img src="imagens/shirt.webp" alt="Shirt Horizon Blue" width="460" height="620">
                         <h4>Camisa "Horizon" Azul</h4>
                         <p>R$ 630</p>
                     </div>
+                </a>
+                <a href="produto.html?id=calca-cargo-cutted" class="product-link">
                     <div class="product-card">
                         <img src="imagens/cargo.webp" alt="Cargo Pants Cutted Preta" width="460" height="620">
                         <h4>Calça Cargo "Cutted" Preta</h4>
                         <p>R$ 890</p>
                     </div>
+                </a>
+                <a href="produto.html?id=calca-track-preta" class="product-link">
                     <div class="product-card">
                         <img src="imagens/track.webp" alt="Track Pants Preta" width="460" height="620"> 
                         <h4>Calça Track Preta</h4>
                         <p>R$ 490</p>
                     </div>
+                </a>
+                <a href="produto.html?id=shorts-cargo-drange" class="product-link">
                     <div class="product-card">
                         <img src="imagens/shorts.webp" alt="Cargo Shorts Cinza" width="460" height="620">
                         <h4>Shorts Cargo "D-range" Cinza</h4>
                         <p>R$ 630</p>
                     </div>
+                </a>
+                <a href="produto.html?id=moletom-yotd" class="product-link">
                     <div class="product-card">
                         <img src="imagens/sweat.webp" alt="Sweat 'YOTD' Black" width="460" height="620">
                         <h4>Moletom Encapuzado "YOTD" Preto</h4>
                         <p>R$ 710</p>
                     </div>
+                </a>
             </div>
         </div>
     </section>
-    <!-- Seção Novidades -->
+
     <section class="product-section" id="novidades">
         <h2>上野 Fall Collection 25</h2>
         <div class="product-grid">
-            <!-- Cards de produtos (repetir estrutura) -->
-            <div class="product-card">
-                <img src="imagens/fall1.webp" alt="Kimono 'Duality' Preto" width="460" height="620">
-                <h4>Camiseta "FALL 25" Lavagem Gradiente</h4>
-                <p>R$ 316</p>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/fall2.webp" alt="Sweat 'YOTD' Black" width="460" height="620">
-                <h4>Camisa "FALL 25" Paneled</h4>
-                <p>R$ 413</p>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/fall3.webp" alt="Cargo Pants Cutted Preta" width="460" height="620">
-                <h4>Calça Cargo "FALL 25" Destacável</h4>
-                <p>R$ 505</p>
-                <button class="btn">Comprar</button>
-            </div>
+            <a href="produto.html?id=camiseta-fall25-gradiente" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/fall1.webp" alt="Camiseta 'FALL 25' Lavagem Gradiente" width="460" height="620">
+                    <h4>Camiseta "FALL 25" Lavagem Gradiente</h4>
+                    <p>R$ 316</p>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
+            <a href="produto.html?id=camisa-fall25-paneled" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/fall2.webp" alt="Camisa 'FALL 25' Paneled" width="460" height="620">
+                    <h4>Camisa "FALL 25" Paneled</h4>
+                    <p>R$ 413</p>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
+            <a href="produto.html?id=calca-fall25-destacavel" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/fall3.webp" alt="Calça Cargo 'FALL 25' Destacável" width="460" height="620">
+                    <h4>Calça Cargo "FALL 25" Destacável</h4>
+                    <p>R$ 505</p>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Seção Masculina -->
     <section class="product-section dark-bg" id="masculino">
         <h2>Moda Masculina</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="imagens/male1.webp" alt="Camisa 'Comic' de botão" width="460" height="620">
-                <h4>Camisa de Botão "Comic" Branca</h4>
-                <p>Linho 100% orgânico | Tamanhos: P-L</p>
-                <button class="btn">Ver Detalhes</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/male2.webp" alt="Camiseta Bordada 'Sakura Flowers' Preta" width="460" height="620">
-                <h4>Camiseta Bordada "Sakura Flowers" Preta</h4>
-                <p>Algodão 100% orgânico | Tamanhos: P-L</p>
-                <button class="btn">Ver Detalhes</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/male3.webp" alt="Camiseta 'No Saw' Branca" width="460" height="620">
-                <h4>Camiseta Preta "No Saw" White Wings</h4>
-                <p>Algodão 100% orgânico | Tamanhos: P-XL</p>
-                <button class="btn">Ver Detalhes</button>
-            </div>
+            <a href="produto.html?id=camisa-comic-branca" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/male1.webp" alt="Camisa 'Comic' de botão" width="460" height="620">
+                    <h4>Camisa de Botão "Comic" Branca</h4>
+                    <p>Linho 100% orgânico | Tamanhos: P-L</p>
+                    <button class="btn">Ver Detalhes</button>
+                </div>
+            </a>
+            <a href="produto.html?id=camiseta-sakura-preta" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/male2.webp" alt="Camiseta Bordada 'Sakura Flowers' Preta" width="460" height="620">
+                    <h4>Camiseta Bordada "Sakura Flowers" Preta</h4>
+                    <p>Algodão 100% orgânico | Tamanhos: P-L</p>
+                    <button class="btn">Ver Detalhes</button>
+                </div>
+            </a>
+            <a href="produto.html?id=camiseta-nosaw-branca" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/male3.webp" alt="Camiseta 'No Saw' Branca" width="460" height="620">
+                    <h4>Camiseta Preta "No Saw" White Wings</h4>
+                    <p>Algodão 100% orgânico | Tamanhos: P-XL</p>
+                    <button class="btn">Ver Detalhes</button>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Seção Feminina -->
     <section class="product-section" id="feminino">
         <h2>Moda Feminina</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="imagens/female1.webp" alt="King Prince Tweed Jacket" width="460" height="620">
-                <h4>Jaqueta "King Prince" Tricotada</h4>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/female4.webp" alt="NSTNEW START Eu sou um Sprout Tee" width="460" height="620">
-                <h4>Camiseta "I'm a Sprout" Branca</h4>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="imagens/female3.webp" alt="Vintage Washed Tee" width="460" height="620">
-                <h4>Camisa Oversized BJHG Preta</h4>
-                <button class="btn">Comprar</button>
-            </div>
+            <a href="produto.html?id=jaqueta-king-prince" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/female1.webp" alt="King Prince Tweed Jacket" width="460" height="620">
+                    <h4>Jaqueta "King Prince" Tricotada</h4>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
+            <a href="produto.html?id=camiseta-sprout-branca" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/female4.webp" alt="NSTNEW START Eu sou um Sprout Tee" width="460" height="620">
+                    <h4>Camiseta "I'm a Sprout" Branca</h4>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
+            <a href="produto.html?id=camisa-oversized-bjhg" class="product-link">
+                <div class="product-card">
+                    <img src="imagens/female3.webp" alt="Vintage Washed Tee" width="460" height="620">
+                    <h4>Camisa Oversized BJHG Preta</h4>
+                    <button class="btn">Comprar</button>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Rodapé Sustentável -->
     <footer class="footer">
-    <div class="footer-grid">
-        <!-- Seção Newsletter -->
-        <div class="footer-section">
-            <h5>Receba Nossas Atualizações</h5>
-            <form class="footer-newsletter">
-                <input type="email" placeholder="Seu e-mail" required>
-                <button type="submit" class="btn-newsletter">Inscrever-se</button>
-            </form>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h5>Receba Nossas Atualizações</h5>
+                <form class="footer-newsletter">
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                </form>
+            </div>
+            <div class="footer-section">
+                <h5>Categorias</h5>
+                <ul>
+                    <li><a href="#masculino">Masculino</a></li>
+                    <li><a href="#feminino">Feminino</a></li>
+                    <li><a href="#novidades">上野 Fall Collection 25</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Atendimento</h5>
+                <ul>
+                    <li>Contato - (43) 99922-4083</li>
+                    <li><a href="termos.html">Política de Envios</a></li>
+                    <li><a href="termos.html#devolucao">Trocas & Devoluções</a></li>
+                    <li><a href="termos.html#privacidade">Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Sustentabilidade</h5>
+                <ul>
+                    <li><a href="sustentabilidade.html">Termos de Sustentabilidade</a></li>
+                    <li><a href="sustentabilidade.html#ODS12">ODS12</a></li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Categorias -->
-        <div class="footer-section">
-            <h5>Categorias</h5>
-            <ul>
-                <li><a href="#masculino">Masculino</a></li>
-                <li><a href="#feminino">Feminino</a></li>
-                <li><a href="#novidades">上野 Fall Collection 25</a></li>
-
-            </ul>
+        <div class="footer-bottom">
+            <div class="legal-links">
+                <a href="termos.html">Política de Privacidade</a> | 
+                <a href="termos.html">Termos de Serviço</a> |
+                <a href="admin.html">Administrador</a>
+            </div>
+            <p class="copyright">© 2025 UENO · Moda Sustentável Oriental</p>
+            <a href="https://samueluenoutfpr.github.io/">Curriculum Vitae</a>
         </div>
-
-        <!-- Atendimento -->
-        <div class="footer-section">
-            <h5>Atendimento</h5>
-            <ul>
-                <li>Contato - (43) 99922-4083</li>
-                <li><a href="termos.html">Política de Envios</a></li>
-                <li><a href="termos.html#devolucao">Trocas & Devoluções</a></li>
-                <li><a href="termos.html#privacidade">Privacidade</a></li>
-            </ul>
-        </div>
-
-        <!-- Sustentabilidade -->
-        <div class="footer-section">
-            <h5>Sustentabilidade</h5>
-            <ul>
-                <li><a href="sustentabilidade.html">Termos de Sustentabilidade</a></li>
-                <li><a href="sustentabilidade.html#ODS12">ODS12</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="legal-links">
-            <a href="termos.html">Política de Privacidade</a> | 
-            <a href="termos.html">Termos de Serviço</a> |
-            <a href="admin.html">Administrador</a>
-        </div>
-        <p class="copyright">© 2025 UENO · Moda Sustentável Oriental</p>
-        <a href="https://samueluenoutfpr.github.io/">Curriculum Vitae</a>
-    </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="scripts.js"></script>
 </body>
 </html>
