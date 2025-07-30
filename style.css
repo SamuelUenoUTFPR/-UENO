@@ -509,3 +509,43 @@ input:focus {
     display: none;
 }
 
+/* --- ESTILOS PARA OS BOTÕES DO CARROSSEL DE PRODUTOS --- */
+
+.product-carousel {
+    position: relative; /* Necessário para posicionar os botões */
+    padding: 3rem 5%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--branco);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-btn:hover {
+    background-color: var(--vermelho);
+}
+
+.carousel-btn.prev {
+    left: 2%; /* Posição do botão "Anterior" */
+}
+
+.carousel-btn.next {
+    right: 2%; /* Posição do botão "Próximo" */
+}
