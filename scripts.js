@@ -52,40 +52,66 @@ document.addEventListener("DOMContentLoaded", function() {
 
     productCarousels.forEach(carousel => {
         const container = carousel.querySelector('.carousel-container');
-        if (!container) return; // Pula se o carrossel não tiver um container
+        if (!container) return;
 
-        // 1. Criar os botões de controle
+        // --- Botões de Controle (já existentes) ---
         const prevButton = document.createElement('button');
         prevButton.className = 'carousel-btn prev';
-        prevButton.innerHTML = '&#10094;'; // Seta para a esquerda
+        prevButton.innerHTML = '&#10094;';
 
         const nextButton = document.createElement('button');
         nextButton.className = 'carousel-btn next';
-        nextButton.innerHTML = '&#10095;'; // Seta para a direita
+        nextButton.innerHTML = '&#10095;';
 
-        // 2. Adicionar os botões ao carrossel
         carousel.appendChild(prevButton);
         carousel.appendChild(nextButton);
+        
+        // --- NOVA LÓGICA DE AUTO-PLAY ---
+        let autoScrollInterval;
 
-        // 3. Adicionar a funcionalidade de clique
+        // Função que avança o carrossel
+        const scrollNext = () => {
+            // Se chegou ao fim, volta para o início
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // Senão, avança para o próximo "slide"
+                container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+            }
+        };
+
+        // Inicia o auto-play
+        const startAutoScroll = () => {
+            // Limpa qualquer intervalo anterior para evitar duplicação
+            clearInterval(autoScrollInterval); 
+            autoScrollInterval = setInterval(scrollNext, 5000); // Avança a cada 5 segundos
+        };
+
+        // Pausa o auto-play
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
+        
+        // Inicia o carrossel
+        startAutoScroll();
+
+        // Pausa quando o mouse está sobre o carrossel
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        // Retoma quando o mouse sai
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        // --- Funcionalidade dos Botões (agora com reset do timer) ---
         nextButton.addEventListener('click', () => {
-            // Rola o carrossel para a direita pelo tamanho da sua largura visível
-            container.scrollBy({
-                left: container.clientWidth,
-                behavior: 'smooth'
-            });
+            scrollNext();
+            startAutoScroll(); // Reinicia o timer após clique manual
         });
 
         prevButton.addEventListener('click', () => {
-            // Rola o carrossel para a esquerda
-            container.scrollBy({
-                left: -container.clientWidth,
-                behavior: 'smooth'
-            });
+            container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+            startAutoScroll(); // Reinicia o timer após clique manual
         });
     });
 });
-
 // --- LÓGICA DOS FORMULÁRIOS (CORRIGIDA E UNIFICADA) ---
 
 // Formulário de CADASTRO
