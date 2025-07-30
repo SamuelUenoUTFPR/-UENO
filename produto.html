@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando Produto...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .product-detail-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            gap: 2rem;
+            align-items: flex-start; /* Alinha os itens no topo */
+        }
+        .product-detail-image {
+            flex: 1;
+            max-width: 50%;
+        }
+        .product-detail-image img {
+            width: 100%;
+            border: 1px solid var(--cinza-medio);
+            display: block; /* Remove espaço extra abaixo da imagem */
+        }
+        .product-detail-info {
+            flex: 1;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-detail-info h1 {
+            font-family: var(--fonte-kanji);
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        .product-price {
+            font-size: 1.8rem;
+            color: var(--preto);
+            margin: 1rem 0 2rem 0;
+        }
+        .product-options label {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .size-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .size-btn {
+            background: var(--branco);
+            border: 1px solid var(--preto);
+            color: var(--preto);
+            padding: 0.5rem 1rem;
+            min-width: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .size-btn:hover {
+            background: var(--cinza-claro);
+        }
+        .size-btn.active {
+            background: var(--preto);
+            color: var(--branco);
+        }
+        .product-description {
+            margin-top: 2rem;
+            line-height: 1.7;
+            color: var(--cinza-escuro);
+        }
+        .product-options {
+            margin-bottom: 1.5rem;
+        }
+        .product-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .product-options select {
+            padding: 0.8rem;
+            width: 150px;
+            border: 1px solid var(--cinza-medio);
+            margin-bottom: 1rem;
+        }
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .product-quantity label {
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+        .product-quantity input {
+            width: 60px;
+            padding: 0.8rem;
+            border: 1px solid var(--cinza-medio);
+            text-align: center;
+        }
+        .product-gallery {
+            display: flex;
+            gap: 1rem;
+            flex: 1; /* Ocupa metade do espaço */
+        }
+        .thumbnail-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .thumbnail-list img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .thumbnail-list img:hover,
+        .thumbnail-list img.active {
+            border-color: var(--preto);
+        }
+        .main-image-display {
+            flex-grow: 1;
+        }
+        .main-image-display img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--cinza-medio);
+        }
+        .add-to-cart-section {
+            margin-bottom: 2rem;
+        }
+        .add-to-cart-section .btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .product-meta {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--cinza-escuro);
+        }
+        .related-products {
+            margin-top: 5rem;
+            padding: 2rem 0; /* Ajustado para o carrossel */
+            background-color: var(--cinza-claro);
+            border-top: 1px solid var(--cinza-medio);
+            border-bottom: 1px solid var(--cinza-medio);
+        }
+        .related-products h2 {
+            font-family: var(--fonte-kanji);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .related-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .related-product-card {
+            background-color: var(--branco);
+            border: 1px solid var(--cinza-medio);
+            padding: 1rem;
+            text-align: center;
+        }
+        .related-product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+        .related-product-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .related-product-card p {
+            font-size: 0.9rem;
+            color: var(--vermelho);
+        }
+
+        /* Estilos para o Seletor de Quantidade */
+        .product-quantity {
+            margin-bottom: 2rem;
+        }
+        .product-quantity label {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .quantity-controls {
+            display: flex;
+            border: 1px solid var(--preto);
+            width: fit-content; /* Faz o container se ajustar ao conteúdo */
+        }
+        .quantity-btn {
+            background: var(--branco);
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .quantity-btn:hover {
+            background: var(--cinza-claro);
+        }
+        #quantity-input {
+            width: 60px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--preto);
+            border-right: 1px solid var(--preto);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        /* Remove as setas padrão do input tipo "number" */
+        #quantity-input::-webkit-outer-spin-button,
+        #quantity-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-container {
+                flex-direction: column;
+            }
+            .product-detail-image {
+                max-width: 100%;
+            }
+            .product-detail-info {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="kanji">上野</span>
+            <span class="latin">UENO</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#masculino">Masculino</a>
+            <a href="index.html#feminino">Feminino</a>
+        </nav>
+    </header>
+
+    <main id="product-detail" class="product-detail-container">
+        <div class="product-gallery">
+            <div id="thumbnail-list" class="thumbnail-list">
+                </div>
+            <div class="main-image-display">
+                <img id="main-product-image" src="" alt="Imagem principal do produto">
+            </div>
+        </div>
+
+        <div class="product-detail-info">
+            <h1 id="product-name"></h1>
+            <p id="product-price" class="product-price"></p>
+            
+            <div class="product-options">
+                <label for="size-select">SIZE:</label>
+                <div class="size-selector">
+                    <button class="size-btn">S</button>
+                    <button class="size-btn">M</button> 
+                    <button class="size-btn">L</button>
+                    <button class="size-btn">XL</button>
+                </div>
+            </div>
+
+            <div class="product-quantity">
+                <label for="quantity-input">QUANTITY</label>
+                <div class="quantity-controls">
+                    <button id="quantity-minus" class="quantity-btn">-</button>
+                    <input type="number" id="quantity-input" value="1" min="1">
+                    <button id="quantity-plus" class="quantity-btn">+</button>
+                </div>
+            </div>
+
+            <div class="add-to-cart-section">
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
+            
+            <h3>Descrição</h3>
+            <p id="product-description" class="product-description"></p>
+        </div>
+    </main>
+    
+    <section class="product-carousel related-products carousel-compacto">
+        <h2>Você também pode gostar</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <a href="produto.html?id=camiseta-nosaw-branca" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/male3.webp" alt="Camiseta 'No Saw' Branca">
+                        <h4>Camiseta "No Saw"</h4>
+                        <p>R$ 295</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=jaqueta-duality" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/jaqueta.webp" alt="Jaqueta Duality">
+                        <h4>Jaqueta "Duality"</h4>
+                        <p>R$ 680</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=camisa-horizon" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/shirt.webp" alt="Shirt Horizon Blue">
+                        <h4>Camisa "Horizon"</h4>
+                        <p>R$ 630</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=parka-future" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/parka.webp" alt="Black Future Parka">
+                        <h4>Parka "Future" Preta</h4>
+                        <p>R$ 1.120</p>
+                    </div>
+                </a>
+                 <a href="produto.html?id=kimono-duality" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/kimono.webp" alt="Black Kimono Duality"> 
+                        <h4>Kimono "Duality" Preto</h4>
+                        <p>R$ 930</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=calca-cargo-cutted" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/cargo.webp" alt="Calça Cargo Cutted Preta">
+                        <h4>Calça Cargo "Cutted" Preta</h4>
+                        <p>R$ 890</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=shorts-cargo-drange" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/shorts.webp" alt="Shorts Cargo D-range Cinza">
+                        <h4>Shorts Cargo "D-range" Cinza</h4>
+                        <p>R$ 630</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=moletom-yotd" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/sweat.webp" alt="Moletom Encapuzado YOTD Preto">
+                        <h4>Moletom Encapuzado "YOTD" Preto</h4>
+                        <p>R$ 710</p>
+                    </div>
+                </a>
+                <a href="produto.html?id=camisa-fall25-paneled" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/fall2.webp" alt="Camisa FALL 25 Paneled">
+                        <h4>Camisa "FALL 25" Paneled</h4>
+                        <p>R$ 413</p>
+                    </div>
+                </a>
+                 <a href="produto.html?id=camiseta-sakura-preta" class="product-link">
+                    <div class="product-card">
+                        <img src="imagens/male2.webp" alt="Camiseta Bordada Sakura Flowers Preta"> 
+                        <h4>Camiseta Bordada "Sakura Flowers" Preta</h4>
+                        <p>R$ 280</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-grid">
+        <!-- Seção Newsletter -->
+        <div class="footer-section">
+            <h5>Receba Nossas Atualizações</h5>
+            <form class="footer-newsletter">
+                <input type="email" placeholder="Seu e-mail" required>
+                <button type="submit" class="btn-newsletter">Inscrever-se</button>
+            </form>
+        </div>
+
+        <!-- Categorias -->
+        <div class="footer-section">
+            <h5>Categorias</h5>
+            <ul>
+                <li><a href="#masculino">Masculino</a></li>
+                <li><a href="#feminino">Feminino</a></li>
+                <li><a href="#novidades">上野 Fall Collection 25</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Atendimento -->
+        <div class="footer-section">
+            <h5>Atendimento</h5>
+            <ul>
+                <li>Contato - (43) 99922-4083</li>
+                <li><a href="termos.html">Política de Envios</a></li>
+                <li><a href="termos.html#devolucao">Trocas & Devoluções</a></li>
+                <li><a href="termos.html#privacidade">Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Sustentabilidade -->
+        <div class="footer-section">
+            <h5>Sustentabilidade</h5>
+            <ul>
+                <li><a href="sustentabilidade.html">Termos de Sustentabilidade</a></li>
+                <li><a href="sustentabilidade.html#ODS12">ODS12</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="legal-links">
+            <a href="termos.html">Política de Privacidade</a> | 
+            <a href="termos.html">Termos de Serviço</a> |
+            <a href="admin.html">Administrador</a>
+        </div>
+        <p class="copyright">© 2025 UENO · Moda Sustentável Oriental</p>
+        <a href="https://samueluenoutfpr.github.io/">Curriculum Vitae</a>
+    </div>
+    </footer>
+
+    <script src="produtos-db.js"></script>
+    <script src="produto.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
