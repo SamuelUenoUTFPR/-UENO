@@ -462,6 +462,25 @@ input:focus {
     padding: 3rem 5%;
 }
 
+.carousel-container {
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    /* Esconde a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+}
+
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -482,6 +501,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 4px; /* Ajuste visual para a seta */
 }
 
 .carousel-btn:hover {
@@ -489,9 +509,9 @@ input:focus {
 }
 
 .carousel-btn.prev {
-    left: 2%; /* Posição do botão "Anterior" */
+    left: 2%; 
 }
 
 .carousel-btn.next {
-    right: 2%; /* Posição do botão "Próximo" */
+    right: 2%; 
 }
